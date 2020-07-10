@@ -9,3 +9,9 @@ class Account:
 
     def account_statement(self):
         print(f"Saldo {self.balance_account} do titular {self.cardholder_name}")
+
+    def deposit_money(self, value):
+        self.balance_account += value
+
+    def withdraw_money(self, value):
+        self.balance_account -= value
