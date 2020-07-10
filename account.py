@@ -6,3 +6,6 @@ class Account:
         self.cardholder_name = cardholder_name
         self.balance_account = balance_account
         self.limit_account = limit_account
+
+    def account_statement(self):
+        print(f"Saldo {self.balance_account} do titular {self.cardholder_name}")
