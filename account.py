@@ -16,6 +16,6 @@ class Account:
     def withdraw_money(self, value):
         self.__balance_account -= value
 
-    def transfer_money(self, value, origin, destiny):
-        origin.withdraw_money(value)
-        origin.deposit_money = destiny
+    def transfer_money(self, value, destiny):
+        self.withdraw_money(value)
+        destiny.deposit_money = destiny
