@@ -19,3 +19,18 @@ class Account:
     def transfer_money(self, value, destiny):
         self.withdraw_money(value)
         destiny.deposit_money = destiny
+
+    def get_number_account(self):
+        return self.__number_account
+
+    def get_cardholder_name(self):
+        return self.__cardholder_name
+
+    def get_balance_account(self):
+        return self.__balance_account
+
+    def get_limit_balance(self):
+        return self.__limit_account
+
+    def set_limit_account(self, new_limit):
+        self.__limit_account = new_limit
