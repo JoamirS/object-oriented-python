@@ -12,3 +12,10 @@ class Client:
         print("Chamando setter nome()")
         self.__name = new_name
 
+    @property
+    def limit(self):
+        return self.__limit
+
+    @limit.setter
+    def limit(self, new_limit):
+        self.__limit = new_limit
