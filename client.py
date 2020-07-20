@@ -5,4 +5,10 @@ class Client:
     @property
     def name(self):
         print("chamando @property nome()")
-        return self.name.title()
+        return self.__name.title()
+
+    @name.setter
+    def name(self, new_name):
+        print("Chamando setter nome()")
+        self.__name = new_name
+
