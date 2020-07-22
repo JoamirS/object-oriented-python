@@ -6,6 +6,7 @@ class Account:
         self.__cardholder_name = cardholder_name
         self.__balance_account = balance_account
         self.__limit_account = limit_account
+        self.__bank_code = '001'
 
     def account_statement(self):
         print(f"Saldo {self.__balance_account} do titular {self.__cardholder_name}")
@@ -46,3 +47,7 @@ class Account:
     @limit_account.setter
     def limit_account(self, new_limit):
         self.__limit_account = new_limit
+
+    @staticmethod
+    def bank_code():
+        return {'BB': '001', 'Caixa': '104', 'Bradesco': '237'}
