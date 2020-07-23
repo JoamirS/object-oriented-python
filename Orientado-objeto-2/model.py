@@ -12,6 +12,14 @@ class Movie:
     def give_likes(self):
         self.__like += 1
 
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name
+
 
 class Series:
     def __init__(self, name, year, season):
@@ -26,6 +34,14 @@ class Series:
 
     def give_likes(self):
         self.__like += 1
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        self.__name = name
 
 
 avengers = Movie('Avengers', 2012, 160)
