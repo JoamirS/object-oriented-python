@@ -1,31 +1,31 @@
 class Program:
     def __init__(self, name, year):
-        self.__name = name.title()
+        self._name = name.title()
         self.year = year
-        self.__likes = 0
+        self._like = 0
 
     @property
     def likes(self):
-        return self.__likes
+        return self._like
 
     def give_likes(self):
-        self.__likes += 1
+        self._like += 1
 
     @property
     def name(self):
-        return self.__name
+        return self._name
 
     @name.setter
     def name(self, new_name):
-        self.__name = new_name.title()
+        self._name = new_name.title()
 
 
 class Movie(Program):
     def __init__(self, name, year, duration):
-        self.__name = name.title()
+        self._name = name.title()
         self.year = year
         self.duration = duration
-        self.__like = 0
+        self._like = 0
 
 
 class Series(Program):
@@ -33,7 +33,7 @@ class Series(Program):
         self.name = name.title()
         self.year = year
         self.season = season
-        self.__like = 0
+        self._like = 0
 
 
 avengers = Movie('avengers', 2012, 160)
