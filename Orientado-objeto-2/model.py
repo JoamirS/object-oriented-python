@@ -22,18 +22,14 @@ class Program:
 
 class Movie(Program):
     def __init__(self, name, year, duration):
-        self._name = name.title()
-        self.year = year
+        super().__init__(name, year)
         self.duration = duration
-        self._like = 0
 
 
 class Series(Program):
     def __init__(self, name, year, season):
-        self.name = name.title()
-        self.year = year
+        super().__init__(name, year)
         self.season = season
-        self._like = 0
 
 
 avengers = Movie('avengers', 2012, 160)
