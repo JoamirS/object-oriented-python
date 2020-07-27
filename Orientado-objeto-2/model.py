@@ -37,3 +37,15 @@ friends = Series('friends', 1994, 10)
 
 print(f'Filme: {avengers.name}, Ano: {avengers.year}, Duração: {avengers.duration}')
 print(f'Série: {friends.name}, Ano: {friends.year}, Temporadas: {friends.season}')
+
+movies_and_series = [avengers, friends]
+
+avengers.give_likes()
+avengers.give_likes()
+
+friends.give_likes()
+friends.give_likes()
+
+for program in movies_and_series:
+    details = program.duration if hasattr(program, 'duration') else program.season
+    print(f'{program.name} - {details} - {program.likes}')
