@@ -19,11 +19,17 @@ class Program:
     def name(self, new_name):
         self._name = new_name.title()
 
+    def print_out(self):
+        print(f'{self._name} - {self.year} - {self._like} Likes')
+
 
 class Movie(Program):
     def __init__(self, name, year, duration):
         super().__init__(name, year)
         self.duration = duration
+
+    def print_out(self):
+        print(f'{self._name} - {self.year} - {self.duration} min - {self._like} Likes')
 
 
 class Series(Program):
@@ -31,12 +37,13 @@ class Series(Program):
         super().__init__(name, year)
         self.season = season
 
+    def print_out(self):
+        print(f'{self._name} - {self.year} - {self.season} temporadas - {self._like} Likes')
+
 
 avengers = Movie('avengers', 2012, 160)
 friends = Series('friends', 1994, 10)
 
-print(f'Filme: {avengers.name}, Ano: {avengers.year}, Duração: {avengers.duration}')
-print(f'Série: {friends.name}, Ano: {friends.year}, Temporadas: {friends.season}')
 
 movies_and_series = [avengers, friends]
 
@@ -47,5 +54,4 @@ friends.give_likes()
 friends.give_likes()
 
 for program in movies_and_series:
-    details = program.duration if hasattr(program, 'duration') else program.season
-    print(f'{program.name} - {details} - {program.likes}')
+    program.print_out()
