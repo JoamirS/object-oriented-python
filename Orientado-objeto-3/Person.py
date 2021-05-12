@@ -1,4 +1,9 @@
+from datetime import date
+
+
 class People:
+    current_year = int(date.today().year)
+
     def __init__(self, name, age, eating=False, speaking=False):
         self.name = name
         self.age = age
@@ -15,6 +20,7 @@ class People:
 
         if self.speaking:
             print(f'{self.name} já está falando.')
+            return
 
         print(f'{self.name} está falando sobre {subject}.')
         self.speaking = True
@@ -29,14 +35,22 @@ class People:
 
     def eat(self, food):
         if self.eating:
-            print(f'{self.name} já está comendo')
+            print(f'{self.name} já está comendo.')
+            return
+
+        if self.speaking:
+            print(f'{self.name} não pode comer falando.')
             return
 
         print(f'{self.name} está comendo {food}')
         self.eating = True
 
     def stop_eat(self):
+        if self.eating:
+            self.eating = False
+            print(f'{self.name} parou de comer')
+            return
+
         if not self.eating:
             print(f'{self.name} não está comendo.')
-            self.eating = False
             return
