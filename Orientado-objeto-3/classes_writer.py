@@ -30,4 +30,4 @@ class Pen:
 
 class TypingMachine:
     def write(self):
-        print('Maquina está escrevendo')
+        print('Máquina está escrevendo')
