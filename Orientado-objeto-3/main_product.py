@@ -1,27 +1,16 @@
-from validation_product import Validation
+from product_class import Product
+'''
+Criando um mini programa de descontos de produtos
+'''
+input_user_name_product = str(input('Digite o nome do produto: ')).capitalize()
+input_user_price_product = float(input('Digite o preço do produto: '))
+input_user_discount = float(input('Digite o valor do desconto: '))
 
+object_test = Product(name_input=input_user_name_product, price_input=input_user_price_product)
+value_discount = Product.discount_price(price_product=input_user_price_product, percentage_input=input_user_discount)
+new_value_with_discount = Product.new_price_with_discount(value_product=input_user_price_product, value_discount_price=value_discount)
 
-class Product:
-    def __init__(self, name_input, price_input):
-        self.name_product = name_input
-        self.price_product = price_input
-
-    def discount_price(self, percentage_input):
-        self.price_product = self.price_product - (self.price_product * (percentage_input / 100))
-
-#   Getter
-    @property
-    def price_product(self):
-        return self.price_product
-
-#   Setter
-    @price_product.setter
-    def price_product(self, new_value):
-        validated_price = Validation.validation_string_input(input_string=new_value)
-        self.price_product = validated_price
-
-
-object_one = Product('Shirt', 40)
-object_one.discount_price(10)
-print(object_one.price_product)
-
+print(f' O nome do produto é {object_test.name_product}')
+print(f' O preço do produto é {object_test.price_product}')
+print(f' O valor do desconto é {value_discount}')
+print(f' O valor do produto com desconto é {new_value_with_discount}')
